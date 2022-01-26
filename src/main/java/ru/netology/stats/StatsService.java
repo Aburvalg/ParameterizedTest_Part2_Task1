@@ -1,7 +1,5 @@
 package ru.netology.stats;
 
-import org.jetbrains.annotations.NotNull;
-
 public class StatsService {
     int[] sales = {};
 
@@ -16,7 +14,7 @@ public class StatsService {
 
     public int calcAverageSales(int[] sales) {
         return calcSumSales(sales) / sales.length;
-    }
+            }
 
     public int maxSalesInMonth(int[] sales) {
         int maxMonth = 0;
@@ -44,8 +42,9 @@ public class StatsService {
 
     public int calcMonthsSalesLessAverage(int[] sales) {
         int countMonth = 0;
+        int i = calcAverageSales(sales);
         for (int sale : sales) {
-            if (sale < calcAverageSales(sales)) {
+            if (sale < i) {
                 countMonth = countMonth + 1;
             }
         }
@@ -54,8 +53,9 @@ public class StatsService {
 
     public int calcMonthsSalesMoreAverage(int[] sales) {
         int countMonth = 0;
+        int i = calcAverageSales(sales);
         for (int sale : sales) {
-            if (sale > calcAverageSales(sales)) {
+            if (sale > i) {
                 countMonth = countMonth + 1;
             }
         }
